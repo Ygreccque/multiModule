@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.objis.demomaven</groupId>
+    <artifactId>monappli</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>com.objis.demomaven</groupId>
+  <artifactId>monappli-web</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>monappli-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+         <groupId>org.apache.geronimo.specs</groupId>
+         <artifactId>geronimo-servlet_3.0_spec</artifactId>
+         <version>1.0</version>
+          <scope>provided</scope>
+         
+ </dependency> 
+ 
+ <dependency>
+         <groupId>org.apache.geronimo.specs</groupId>
+         <artifactId>geronimo-jsp_2.2_spec</artifactId>
+         <version>1.1</version>
+ </dependency> 
+ 
+  <dependency>
+      <groupId>com.objis.demomaven</groupId>
+      <artifactId>monappli-domaine</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    
+     <dependency>
+      <groupId>com.objis.demomaven</groupId>
+  <artifactId>monappli-service</artifactId>
+  <version>1.0-SNAPSHOT</version>
+    </dependency>
+ 
+ 
+  </dependencies>
+  <build>
+    <finalName>monappli-web</finalName>
+    
+
+
+    <plugins>
+ 
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/</path>
+          <port>8084</port>
+        </configuration>
+      </plugin>
+
+    
+  <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-site-plugin</artifactId>
+   <version>3.4</version>
+   <configuration>
+    <reportPlugins>
+     <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-project-info-reports-plugin</artifactId>
+      <version>2.2</version>
+     </plugin>
+     <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+      <version>2.7</version>
+     </plugin>
+     
+      <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-jxr-plugin</artifactId>
+  <version>2.1</version>
+ </plugin>
+     
+     <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>2.6</version>
+     </plugin>
+     
+    
+     <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-pmd-plugin</artifactId>
+  <version>2.5</version>
+ </plugin>
+     <plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>cobertura-maven-plugin</artifactId>
+  <version>2.4</version>
+ </plugin>
+     
+    </reportPlugins>
+   </configuration>
+  </plugin>
+ </plugins>
+    
+ 
+
+    
+  </build>
+</project>
